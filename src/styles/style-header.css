@@ -15,23 +15,55 @@
     --fontWeightNavbar:600;
 }
 
+header {
+    background-color: var(--backgroundColorHeader);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 .main-bar {
-    padding-left: 9%;
-    padding-right: 9%;
-    padding-top: 1%;
+    padding: 1.7% 13% 1.5% 13%;
     display: flex;
     justify-content: center;
+    border-radius: 100px 0px 0px 0px;
+    background: white;
+}
+
+.main-bar .content, .top-bar .content {
+    display: flex;
+    width: 1200px;
+    max-width: 1200px;
+    justify-content: space-between;
 }
 
 .top-bar {
     display: flex;
     width: 100%;
-    height: 25px;
+    height: 30px;
     background-color: var(--backgroundColorHeader);
+    padding: 0.2% 13% 0.2% 13%;
+    justify-content: center;
+}
+
+.top-bar .content a{
+    text-decoration: none;
+    color: var(--mainTextColorHeader);
+    font-weight: 400;
+}
+
+.top-bar .content a svg{
+    vertical-align: middle;
+    padding-bottom: 2px;
+}
+
+.phone-number-top-menu {
+    margin-right: 25px;
 }
 
 .logo-header-link {
-    width: 25%;
+    width: 30%;
 }
 
 .logo-header {
@@ -40,7 +72,7 @@
 }
 
 header nav {
-    width: 75%;
+    width: 70%;
     display: flex;
     align-content: center;
     flex-wrap: wrap;
@@ -52,6 +84,22 @@ header nav a {
     font-weight: var(--fontWeightNavbar);
     color: var(--mainTextColorHeader);
     text-decoration: none;
+    position: relative;
+}
+
+header nav a::after {
+    content: "";
+    display: block;
+    background-color: var(--hoverColorUnderline);
+    height: 4px;
+    width: 0;
+    transition: width 0.3s ease, transform 0.3s ease;
+    transform-origin: center; /* Transition grows from center */
+    margin: 0 auto;
+}
+
+header nav a:hover::after {
+    width: 100%;
 }
 
 header .nav-btn {
@@ -63,12 +111,29 @@ header .nav-btn {
     color: var(--mainTextColorHeader);
     visibility: hidden;
     opacity: 0;
+    font-size: 1.3rem;
+    display: none;
 }
 
-@media only screen and (max-width: 1024px) {
+.desktop-hidden{
+    display: none;
+}
+
+@media only screen and (max-width: 1090px) {
+    
+    header {
+        background-color: white;
+    }
+    
+    header .main-bar{
+        justify-content: space-between;
+        padding: 3% 5% 1% 5%;
+    }
+
     header .nav-btn {
         visibility: visible;
         opacity: 1;
+        display: block;
     }
 
     header nav {
@@ -78,6 +143,7 @@ header .nav-btn {
         height: 100%;
         width: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 1.5rem;
@@ -89,4 +155,19 @@ header .nav-btn {
     header .responsive_nav {
         transform: none;
     }
+
+    nav .nav-close-btn {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .desktop-hidden {
+        display: inline;
+    }
+
+    .top-bar {
+        display: none;
+    }
+    
 }
