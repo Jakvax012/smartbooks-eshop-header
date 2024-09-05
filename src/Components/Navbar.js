@@ -25,10 +25,7 @@ function Navbar() {
             <div className="main-bar">
                 <div className="content">
                     <a href='https://www.smartbooks.sk/' className='logo-header-link'>
-                        <img 
-                        src='https://www.smartbooks.sk/wp-content/uploads/2024/09/logo-new-1536x330-1.png'
-                        alt='Logo smartbooks.sk'
-                        className='logo-header'/>
+                        <img src='https://www.smartbooks.sk/wp-content/uploads/2024/09/logo-new-1536x330-1.png' alt='Logo smartbooks.sk' className='logo-header'/>
                     </a>
                     <nav ref={navRef}>
                         <a href="https://www.smartbooks.sk/rodicia/">Pre rodičov</a>
